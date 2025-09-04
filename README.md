@@ -1,11 +1,10 @@
 # PTTKPM25-26_N05_Nhom14
 # Nhóm 14 
-| Thành viên             | MSV        | Vai trò      | Công việc chính                                                                 |
-|------------------------|------------|--------------|----------------------------------------------------------------------------------|
-| Nguyễn Danh Quang      | 23010230   | Trưởng nhóm | -Phân chia nhiệm vụ cho các thành viên, theo dõi, đánh giá các thành viên         
-                                                      - Mô tả usecase, sequence flow: đăng ký, đăng nhập, đăng xuất                     |
-
-| Dương Kim Chi          | 23010831   | Thành viên   | -Mô tả usecase, sequence flow: quản lý users, quản lý sách            |
+## 🙍Thành viên:
+| Thành viên        | MSV      | Vai trò      | Công việc chính                                                                 |
+|-------------------|----------|--------------|---------------------------------------------------------------------------------|
+| Nguyễn Danh Quang | 23010230 | Trưởng nhóm  | - Phân chia nhiệm vụ cho các thành viên, theo dõi, đánh giá các thành viên <br> - Mô tả usecase, sequence flow: đăng ký, đăng nhập, đăng xuất |
+| Dương Kim Chi     | 23010831 | Thành viên   | - Mô tả usecase, sequence flow: quản lý users, quản lý sách |
 # Nội Dung: Web quản lí hiệu sách trực tuyến 
 Yêu cầu:
 - Có chức năng quản lý sản phẩm (mã, tên, giá, …).
