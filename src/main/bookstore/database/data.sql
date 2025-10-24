@@ -1,5 +1,3 @@
-USE bookstore;
-
 INSERT INTO users (name, email, phone, password, role, address)
 VALUES ('Admin', 'admin@bookstore.com', '0123456789',
         '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -22,52 +20,52 @@ VALUES
 ('Tôi Thấy Hoa Vàng Trên Cỏ Xanh', 'Nguyễn Nhật Ánh', 'NXB Trẻ', '9786041094567',
  'Câu chuyện tuổi thơ đầy cảm xúc tại một làng quê Việt Nam qua đôi mắt trẻ thơ.', 
  'Tình bạn, ký ức và niềm trong sáng tuổi nhỏ.', 95000,
- 'https://cdn0.fahasa.com/media/catalog/product/9/7/9786041094567.jpg', 'Văn học Việt Nam', 120, 4.7, 2100),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Văn học Việt Nam', 120, 4.7, 2100),
 
 ('Mắt Biếc', 'Nguyễn Nhật Ánh', 'NXB Trẻ', '9786041045681',
  'Chuyện tình buồn của Ngạn và Hà Lan, gắn liền với làng Đo Đo.', 
  'Một trong những tác phẩm nổi tiếng nhất của Nguyễn Nhật Ánh.', 98000,
- 'https://cdn0.fahasa.com/media/catalog/product/8/9/8934974154673.jpg', 'Văn học Việt Nam', 150, 4.8, 2500),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Văn học Việt Nam', 150, 4.8, 2500),
 
 ('Tuổi Trẻ Đáng Giá Bao Nhiêu', 'Rosie Nguyễn', 'NXB Hội Nhà Văn', '9786046980421',
  'Cuốn sách truyền cảm hứng về hành trình khám phá bản thân và sống có ý nghĩa.', 
  'Giúp người trẻ định hướng, phát triển và tận dụng thanh xuân.', 89000,
- 'https://cdn0.fahasa.com/media/catalog/product/8/9/8934974157834.jpg', 'Kỹ năng sống', 90, 4.6, 1700),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Kỹ năng sống', 90, 4.6, 1700),
 
 ('Đắc Nhân Tâm', 'Dale Carnegie', 'NXB Tổng Hợp TP.HCM', '9786041234505',
  'Tác phẩm kinh điển về nghệ thuật giao tiếp và ứng xử.', 
  'Giúp bạn được yêu mến, thuyết phục người khác và thành công hơn.', 115000,
- 'https://cdn0.fahasa.com/media/catalog/product/d/a/dac_nhan_tam_bia_moi.jpg', 'Kỹ năng sống', 200, 4.9, 3200),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Kỹ năng sống', 200, 4.9, 3200),
 
 ('Nhà Giả Kim', 'Paulo Coelho', 'NXB Văn Học', '9786041198685',
  'Câu chuyện đầy triết lý về hành trình theo đuổi giấc mơ của chàng Santiago.', 
  'Tác phẩm biểu tượng về sự khám phá và ý nghĩa cuộc sống.', 99000,
- 'https://cdn0.fahasa.com/media/catalog/product/n/h/nha_gia_kim.jpg', 'Văn học nước ngoài', 140, 4.8, 3100),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Văn học nước ngoài', 140, 4.8, 3100),
 
 ('Muôn Kiếp Nhân Sinh', 'Nguyên Phong', 'NXB Tổng Hợp TP.HCM', '9786041186860',
  'Khám phá nhân quả và luân hồi qua câu chuyện của một doanh nhân Mỹ.', 
  'Tác phẩm chứa đựng triết lý sâu sắc về nghiệp và cuộc sống.', 168000,
- 'https://cdn0.fahasa.com/media/catalog/product/m/u/muon_kiep_nhan_sinh_tap_1_bia_1.jpg', 'Tâm linh', 100, 4.7, 2200),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Tâm linh', 100, 4.7, 2200),
 
 ('Trò Chuyện Với Thượng Đế', 'Neale Donald Walsch', 'NXB Văn Hóa Thông Tin', '9786041134564',
  'Tác giả kể về những đối thoại kỳ diệu giữa ông và Thượng Đế.', 
  'Một hành trình tìm kiếm sự thật và bình an nội tâm.', 175000,
- 'https://cdn0.fahasa.com/media/catalog/product/t/r/tro_chuyen_voi_thuong_de.jpg', 'Tâm linh', 60, 4.5, 950),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Tâm linh', 60, 4.5, 950),
 
 ('Không Gia Đình', 'Hector Malot', 'NXB Kim Đồng', '9786042048501',
  'Câu chuyện cảm động về cậu bé Rémi trong hành trình phiêu lưu khắp nước Pháp.', 
  'Một tác phẩm kinh điển về tình người và nghị lực sống.', 86000,
- 'https://cdn0.fahasa.com/media/catalog/product/k/h/khong_gia_dinh_1_2023.jpg', 'Thiếu nhi', 130, 4.8, 2800),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Thiếu nhi', 130, 4.8, 2800),
 
 ('Chiến Binh Cầu Vồng', 'Andrea Hirata', 'NXB Hội Nhà Văn', '9786041129003',
  'Câu chuyện xúc động về hành trình học tập của nhóm học sinh nghèo Indonesia.', 
  'Truyền cảm hứng mạnh mẽ về giáo dục và niềm tin.', 97000,
- 'https://cdn0.fahasa.com/media/catalog/product/c/h/chien_binh_cau_vong.jpg', 'Văn học nước ngoài', 80, 4.6, 1600),
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Văn học nước ngoài', 80, 4.6, 1600),
 
 ('Sapiens: Lược Sử Loài Người', 'Yuval Noah Harari', 'NXB Thế Giới', '9786041131113',
  'Từ thời nguyên thủy đến kỷ nguyên công nghệ, loài người đã đi xa như thế nào.', 
  'Một tác phẩm kinh điển kết hợp giữa triết học, khoa học và lịch sử.', 245000,
- 'https://cdn0.fahasa.com/media/catalog/product/8/9/8935270700689.jpg', 'Khoa học xã hội', 75, 4.9, 5000);
+ 'https://cdn1.fahasa.com/media/catalog/product/i/m/image_195509_1_36793.jpg', 'Khoa học xã hội', 75, 4.9, 5000);
 
 INSERT INTO orders (user_id, shipping_address, shipping_phone, total_amount, status, payment_method, notes)
 VALUES
