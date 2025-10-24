@@ -69,9 +69,11 @@ VALUES
 
 INSERT INTO orders (user_id, shipping_address, shipping_phone, total_amount, status, payment_method, notes)
 VALUES
-(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 193000, 'DELIVERED', 'CASH_ON_DELIVERY', 'Giao buổi chiều'),
-(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 204000, 'SHIPPED', 'BANK_TRANSFER', ''),
-(4, '789 Đường Nguyễn Trãi, Thanh Xuân, Hà Nội', '0987654323', 343000, 'PENDING', 'CASH_ON_DELIVERY', '');
+(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 175000, 'CONFIRMED', 'CASH_ON_DELIVERY', 'Giao trước 6h tối'),
+(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 303000, 'DELIVERED', 'CREDIT_CARD', 'Đã thanh toán online'),
+(4, '789 Đường Nguyễn Trãi, Thanh Xuân, Hà Nội', '0987654323', 263000, 'SHIPPED', 'BANK_TRANSFER', 'Đóng gói cẩn thận giúp'),
+(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 86000, 'PENDING', 'CASH_ON_DELIVERY', 'Sách tặng cho bạn'),
+(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 343000, 'CONFIRMED', 'PAYPAL', 'Mua combo triết học');
 
 INSERT INTO order_items (order_id, book_id, quantity, price)
 VALUES
