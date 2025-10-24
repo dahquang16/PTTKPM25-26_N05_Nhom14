@@ -1,95 +1,120 @@
-package com.bookstore.dto;
+package com.bookstore.service;
 
+import com.bookstore.dto.RegisterRequest;
 import com.bookstore.entity.Role;
-import java.time.LocalDateTime;
+import com.bookstore.entity.User;
+import com.bookstore.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
-public class UserDTO {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+
+@Service
+public class UserService {
     
-    private Long id;
-    private String name;
-    private String email;
-    private String phone;
-    private Role role;
-    private String address;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    @Autowired
+    private UserRepository userRepository;
     
-    public UserDTO() {}
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     
-    public UserDTO(Long id, String name, String email, String phone, Role role, String address, LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.role = role;
-        this.address = address;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+    public User createUser(RegisterRequest registerRequest) {
+        if (userRepository.existsByEmail(registerRequest.getEmail())) {
+            throw new RuntimeException("Email already exists!");
+        }
+        
+        User user = new User();
+        user.setName(registerRequest.getName());
+        user.setEmail(registerRequest.getEmail());
+        user.setPhone(registerRequest.getPhone());
+        user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
+        user.setAddress(registerRequest.getAddress());
+        user.setRole(Role.CUSTOMER);
+        
+        return userRepository.save(user);
     }
     
-    // Getters and Setters
-    public Long getId() {
-        return id;
+    public User createAdminUser() {
+        if (!userRepository.existsByEmail("admin@bookstore.com")) {
+            User admin = new User();
+            admin.setName("Admin");
+            admin.setEmail("admin@bookstore.com");
+            admin.setPhone("0123456789");
+            admin.setPassword(passwordEncoder.encode("admin123"));
+            admin.setAddress("Admin Address");
+            admin.setRole(Role.ADMIN);
+            
+            return userRepository.save(admin);
+        }
+        return null;
     }
     
-    public void setId(Long id) {
-        this.id = id;
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
     
-    public String getName() {
-        return name;
+    public Page<User> findUsersWithFilters(String name, String email, String phone, Pageable pageable) {
+        return userRepository.findUsersWithFilters(name, email, phone, pageable);
     }
     
-    public void setName(String name) {
-        this.name = name;
+    public User updateUser(Long id, User userDetails) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+        
+        if (userDetails.getName() != null) {
+            user.setName(userDetails.getName());
+        }
+        if (userDetails.getPhone() != null) {
+            user.setPhone(userDetails.getPhone());
+        }
+        if (userDetails.getAddress() != null) {
+            user.setAddress(userDetails.getAddress());
+        }
+        
+        // Only allow role update if provided
+        if (userDetails.getRole() != null) {
+            user.setRole(userDetails.getRole());
+        }
+        
+        return userRepository.save(user);
     }
     
-    public String getEmail() {
-        return email;
+    public void deleteUser(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+        
+        userRepository.delete(user);
     }
     
-    public void setEmail(String email) {
-        this.email = email;
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
     }
     
-    public String getPhone() {
-        return phone;
+    public Page<User> searchUsers(String query, Pageable pageable) {
+        return userRepository.findUsersWithFilters(query, query, query, pageable);
     }
     
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-    
-    public Role getRole() {
-        return role;
-    }
-    
-    public void setRole(Role role) {
-        this.role = role;
-    }
-    
-    public String getAddress() {
-        return address;
-    }
-    
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-    
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-    
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-    
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public Map<String, Object> getUserStats() {
+        Map<String, Object> stats = new HashMap<>();
+        
+        long totalUsers = userRepository.count();
+        long adminCount = userRepository.countByRole(Role.ADMIN);
+        long customerCount = userRepository.countByRole(Role.CUSTOMER);
+        
+        stats.put("totalUsers", totalUsers);
+        stats.put("adminCount", adminCount);
+        stats.put("customerCount", customerCount);
+        stats.put("adminPercentage", totalUsers > 0 ? (double) adminCount / totalUsers * 100 : 0);
+        stats.put("customerPercentage", totalUsers > 0 ? (double) customerCount / totalUsers * 100 : 0);
+        
+        return stats;
     }
 }
+
 
