@@ -1,5 +1,6 @@
 package com.bookstore.repository;
 
+import com.bookstore.entity.Role;
 import com.bookstore.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,5 +26,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
                                    @Param("email") String email, 
                                    @Param("phone") String phone, 
                                    Pageable pageable);
+    
+    long countByRole(Role role);
 }
 
