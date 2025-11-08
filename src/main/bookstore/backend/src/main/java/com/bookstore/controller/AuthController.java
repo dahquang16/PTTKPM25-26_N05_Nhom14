@@ -111,7 +111,6 @@ public class AuthController {
     @GetMapping("/profile")
     public ResponseEntity<ApiResponse<User>> getProfile() {
         try {
-            // Get current user from security context
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String email = authentication.getName();
             
@@ -127,14 +126,12 @@ public class AuthController {
     @PutMapping("/profile")
     public ResponseEntity<ApiResponse<User>> updateProfile(@RequestBody User userDetails) {
         try {
-            // Get current user from security context
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             String email = authentication.getName();
             
             User currentUser = userService.findByEmail(email)
                     .orElseThrow(() -> new RuntimeException("User not found"));
             
-            // Create a new User object with updated fields
             User userToUpdate = new User();
             userToUpdate.setName(userDetails.getName());
             userToUpdate.setPhone(userDetails.getPhone());
