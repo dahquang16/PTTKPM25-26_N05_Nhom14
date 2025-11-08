@@ -1,3 +1,5 @@
+USE bookstore;
+
 INSERT INTO users (name, email, phone, password, role, address)
 VALUES ('Admin', 'admin@bookstore.com', '0123456789',
         '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
@@ -69,11 +71,11 @@ VALUES
 
 INSERT INTO orders (user_id, shipping_address, shipping_phone, total_amount, status, payment_method, notes)
 VALUES
-(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 175000, 'CONFIRMED', 'CASH_ON_DELIVERY', 'Giao trước 6h tối'),
-(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 303000, 'DELIVERED', 'CREDIT_CARD', 'Đã thanh toán online'),
-(4, '789 Đường Nguyễn Trãi, Thanh Xuân, Hà Nội', '0987654323', 263000, 'SHIPPED', 'BANK_TRANSFER', 'Đóng gói cẩn thận giúp'),
-(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 86000, 'PENDING', 'CASH_ON_DELIVERY', 'Sách tặng cho bạn'),
-(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 343000, 'CONFIRMED', 'PAYPAL', 'Mua combo triết học');
+(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 193000, 'DELIVERED', 'CASH_ON_DELIVERY', 'Giao buổi chiều'),
+(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 204000, 'SHIPPED', 'BANK_TRANSFER', 'Thanh toán trước'),
+(4, '789 Đường Nguyễn Trãi, Thanh Xuân, Hà Nội', '0987654323', 267000, 'PENDING', 'CASH_ON_DELIVERY', 'Giao trong ngày'),
+(2, '123 Đường Trần Duy Hưng, Cầu Giấy, Hà Nội', '0987654321', 245000, 'CONFIRMED', 'CREDIT_CARD', 'Mua sách tặng bạn'),
+(3, '456 Đường Giải Phóng, Hai Bà Trưng, Hà Nội', '0987654322', 283000, 'DELIVERED', 'PAYPAL', 'Đã nhận hàng tốt');
 
 INSERT INTO order_items (order_id, book_id, quantity, price)
 VALUES
@@ -82,4 +84,10 @@ VALUES
 (2, 3, 1, 89000),
 (2, 4, 1, 115000),
 (3, 5, 1, 99000),
-(3, 6, 1, 168000);
+(3, 6, 1, 168000),
+(4, 10, 1, 245000),
+(5, 8, 1, 86000),
+(5, 9, 1, 97000),
+(5, 1, 1, 95000);
+
+
